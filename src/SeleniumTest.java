@@ -7,11 +7,14 @@ public class SeleniumTest {
     public static void main(String[] args){
         System.setProperty("webdriver.chrome.driver", "src/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("http://demo.guru99.com/");
-        WebElement element = driver.findElement(By.xpath("//input[@name='emailid']"));
-        element.sendKeys("abc@gmail.com");
+        driver.get("https://app.sysdigcloud.com/");
 
-        WebElement button = driver.findElement(By.xpath("//input[@name='btnLogin']"));
-        button.click();
+        WebElement usernameBox = driver.findElement(By.id("ember1620"));
+        usernameBox.sendKeys("prova@gmail.com");
+        WebElement passwordBox = driver.findElement(By.id("ember1621"));
+        passwordBox.sendKeys("P@assw0rd");
+
+        WebElement confirmButton = driver.findElement(By.id("ember1630"));
+        confirmButton.click();
     }
 }
